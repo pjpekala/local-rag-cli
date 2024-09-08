@@ -31,10 +31,11 @@ ollama_model = "llama3.1:8b"
 llm = Ollama(model=ollama_model, request_timeout=120.0)
 
 # Initialize Ollama for embeddings
-embed_model = OllamaEmbedding(model_name=ollama_model)
+# embed_model = OllamaEmbedding(model_name=ollama_model)
+embed_model = OllamaEmbedding(model_name="nomic-embed-text")
 
 # Load documents with batching
-documents = SimpleDirectoryReader("../OneDrive/Graduate_School/courses/Fall2024/CIS_553/textbook/software_engineering_textbook/", num_files_limit=10).load_data()
+documents = SimpleDirectoryReader("/mnt/c/Users/Paul/OneDrive/Graduate_School/courses/Fall2024/CIS_553/textbook/software_engineering_textbook/", num_files_limit=10).load_data()
 
 # Set up ChromaVectorStore
 vector_store = ChromaVectorStore(chroma_collection=chroma_collection)
