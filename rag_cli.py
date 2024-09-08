@@ -17,7 +17,7 @@ from llama_index.core.ingestion import IngestionCache
 
 # Set environment variables
 os.environ["OPENAI_API_KEY"] = "ollama"
-os.environ["CUDA_VISIBLE_DEVICES"] = "0"  # Ensure we're using the GPU
+# os.environ["CUDA_VISIBLE_DEVICES"] = "0"  # Ensure we're using the GPU
 
 # Initialize document store and vector store
 docstore = SimpleDocumentStore()
@@ -34,7 +34,7 @@ llm = Ollama(model=ollama_model, request_timeout=120.0)
 embed_model = OllamaEmbedding(model_name=ollama_model)
 
 # Load documents with batching
-documents = SimpleDirectoryReader("../textbook/software_engineering_textbook/", num_files_limit=10).load_data()
+documents = SimpleDirectoryReader("../OneDrive/Graduate_School/courses/Fall2024/CIS_553/textbook/software_engineering_textbook/", num_files_limit=10).load_data()
 
 # Set up ChromaVectorStore
 vector_store = ChromaVectorStore(chroma_collection=chroma_collection)

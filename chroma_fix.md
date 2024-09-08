@@ -1,0 +1,1 @@
+Had to follow the following thread to get chroma to work, had to modify chroma lib: https://stackoverflow.com/questions/76958817/streamlit-your-system-has-an-unsupported-version-of-sqlite3-chroma-requires-sq
